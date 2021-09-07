@@ -1,0 +1,19 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/swagger",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "8080"
+        }
+      ],
+      "UpstreamPathtemplate": "/swagger",
+      "Key": "swagger1"
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:1010"
+  }
+}
