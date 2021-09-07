@@ -20,27 +20,27 @@ services:
     volumes:
       - ${APPDATA}\microsoft\UserSecrets\:/root/.microsoft/usersecrets
       - ${USERPROFILE}\.aspnet\https:/root/.aspnet/https/
-  microservice2:
-    build: ./microservice2
-    ports:
-      - "8880:80"
-      - "8881:443"
-    environment:
-      ASPNETCORE_URLS: "https://+;http://+"
-      ASPNETCORE_HTTPS_PORT: 8881
-      ASPNETCORE_ENVIRONMENT: Development
-    volumes:
-      - ${APPDATA}\microsoft\UserSecrets\:/root/.microsoft/usersecrets
-      - ${USERPROFILE}\.aspnet\https:/root/.aspnet/https/
-  envoy:
-    build: ./Envoy
-    ports:
-      - "8000:8000"
-      - "8001:8001"
-      - "10001:10001"
-    environment:
-      ASPNETCORE_ENVIRONMENT: Development
-    volumes:
-      - ./Envoy/envoy.yaml:/etc/envoy/envoy.yaml
-      - ./Envoy/https.crt:/etc/ssl/certs/https.crt
-      - ./Envoy/key.pem:/etc/ssl/certs/key.pem
+#  microservice2:
+#    build: ./microservice2
+#    ports:
+#      - "8880:80"
+#      - "8881:443"
+#    environment:
+#      ASPNETCORE_URLS: "https://+;http://+"
+#      ASPNETCORE_HTTPS_PORT: 8881
+#      ASPNETCORE_ENVIRONMENT: Development
+#    volumes:
+#      - ${APPDATA}\microsoft\UserSecrets\:/root/.microsoft/usersecrets
+#      - ${USERPROFILE}\.aspnet\https:/root/.aspnet/https/
+#  envoy:
+#    build: ./Envoy
+#    ports:
+#      - "8000:8000"
+#      - "8001:8001"
+#      - "10001:10001"
+#    environment:
+#      ASPNETCORE_ENVIRONMENT: Development
+#    volumes:
+#      - ./Envoy/envoy.yaml:/etc/envoy/envoy.yaml
+#      - ./Envoy/https.crt:/etc/ssl/certs/https.crt
+#      - ./Envoy/key.pem:/etc/ssl/certs/key.pem

@@ -48,6 +48,7 @@ namespace microservice1
 
              //services.AddSingleton<IEmployeeData, MockEmployeeData>();  - For Mocking data
              services.AddScoped<IEmployeeData,SqlEmpData>();
+             services.AddScoped<IPlatformData,SqlPlatformData>();
 
             services.AddSwaggerGen(c =>
             {

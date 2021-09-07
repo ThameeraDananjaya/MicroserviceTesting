@@ -18,5 +18,6 @@ namespace microservice1
         } 
 
         public DbSet<Employee> Employees { get; set; }
+        public DbSet<Platform> Platforms { get; set; }
     }
 }

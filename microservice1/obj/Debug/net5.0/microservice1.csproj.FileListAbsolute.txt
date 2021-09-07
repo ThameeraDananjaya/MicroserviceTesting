@@ -149,3 +149,5 @@ D:\OneDrive-SDS\OneDrive - sdsoman.com\Personal\MicroserviceTesting\microservice
 D:\OneDrive-SDS\OneDrive - sdsoman.com\Personal\MicroserviceTesting\microservice1\obj\Debug\net5.0\ref\microservice1.dll
 D:\OneDrive-SDS\OneDrive - sdsoman.com\Personal\MicroserviceTesting\microservice1\obj\Debug\net5.0\microservice1.pdb
 D:\OneDrive-SDS\OneDrive - sdsoman.com\Personal\MicroserviceTesting\microservice1\obj\Debug\net5.0\microservice1.genruntimeconfig.cache
+D:\OneDrive-SDS\OneDrive - sdsoman.com\Personal\MicroserviceTesting\microservice1\bin\Debug\net5.0\AutoMapper.dll
+D:\OneDrive-SDS\OneDrive - sdsoman.com\Personal\MicroserviceTesting\microservice1\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
