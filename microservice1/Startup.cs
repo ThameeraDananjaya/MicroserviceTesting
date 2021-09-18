@@ -33,8 +33,9 @@ namespace microservice1
         {
 
             services.AddControllers();
-            
-            var connStr=Configuration.GetConnectionString("DevConnection");
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+            var connStr=Configuration.GetConnectionString("ms1Connection");
             
             
             // if (currentEnvironment.EnvironmentName=="DOCKER")
@@ -42,6 +43,10 @@ namespace microservice1
             // if (currentEnvironment.EnvironmentName=="Development")
             //     connStr= Configuration.GetConnectionString("DevConnection");
 
+            if (!currentEnvironment.IsProduction())
+            {
+                Console.WriteLine("--> Environment is not in Production Mode");
+            }
             services.AddDbContext<MS1Context>(options => {
                 options.UseSqlServer(connStr);
             });
@@ -49,6 +54,8 @@ namespace microservice1
              //services.AddSingleton<IEmployeeData, MockEmployeeData>();  - For Mocking data
              services.AddScoped<IEmployeeData,SqlEmpData>();
              services.AddScoped<IPlatformData,SqlPlatformData>();
+
+             services.AddHttpClient<ICommandDataClient,HttpCommandDataClient>();
 
             services.AddSwaggerGen(c =>
             {
@@ -66,7 +73,7 @@ namespace microservice1
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "microservice1 v1"));
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
 
             app.UseRouting();
 
